@@ -1,0 +1,6 @@
+[gd_resource type="InputEventKey" format=3 uid="uid://ci8a064ojsemv"]
+
+[resource]
+device = -1
+command_or_control_autoremap = true
+keycode = 79

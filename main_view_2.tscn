@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://ixluifxrki7v"]
+
+[ext_resource type="Script" path="res://main_view_2.gd" id="1_nu2jw"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("fileMenu", "file_open", "file_save_as", "list_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nu2jw")
+fileMenu = NodePath("VBoxContainer/Panel/MenuBar/FileMenuButton")
+file_open = NodePath("FileOpenDialog")
+file_save_as = NodePath("FileSaveAsDialog")
+list_container = NodePath("VBoxContainer/ScrollContainer/VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="VBoxContainer/Panel"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FileMenuButton" type="MenuButton" parent="VBoxContainer/Panel/MenuBar"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "File"
+item_count = 5
+popup/item_0/text = "Open"
+popup/item_1/text = "Save"
+popup/item_1/id = 1
+popup/item_2/text = "Save As..."
+popup/item_2/id = 2
+popup/item_2/disabled = true
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_3/separator = true
+popup/item_4/text = "Exit"
+popup/item_4/id = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FileOpenDialog" type="FileDialog" parent="."]
+title = "Open JSON File..."
+size = Vector2i(720, 400)
+popup_window = true
+
+[node name="FileSaveAsDialog" type="FileDialog" parent="."]
+auto_translate_mode = 1
+size = Vector2i(207, 175)

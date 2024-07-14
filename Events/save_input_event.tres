@@ -1,0 +1,6 @@
+[gd_resource type="InputEventKey" format=3 uid="uid://dssngs5r3kwwp"]
+
+[resource]
+device = -1
+command_or_control_autoremap = true
+keycode = 83

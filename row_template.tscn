@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck7s2d11v47yr"]
+
+[ext_resource type="Script" path="res://row_template.gd" id="1_uurhp"]
+
+[node name="RowTemplate" type="HBoxContainer" node_paths=PackedStringArray("label", "jp_text", "en_text")]
+custom_minimum_size = Vector2(0, 35)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+script = ExtResource("1_uurhp")
+label = NodePath("Label")
+jp_text = NodePath("TextEdit")
+en_text = NodePath("TextEdit2")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hello, my name is
+and also
+and also
+..."
+editable = false
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hello, my name is"
+
+[node name="Spacing" type="Control" parent="."]
+layout_mode = 2
